@@ -1,5 +1,6 @@
 import pyglet
 from pyglet.window import key
+from pyglet.window import mouse
 
 window = pyglet.window.Window()
 
@@ -12,6 +13,12 @@ def on_key_press(symbol, modifiers):
     elif symbol == key.ENTER:
         print('The enter key was pressed.')
 
+
+@window.event
+def on_mouse_press(x, y, button, modifiers):
+    if button == mouse.LEFT:
+        print('The left mouse button was pressed.')
+        
 @window.event
 def on_draw():
     window.clear()
