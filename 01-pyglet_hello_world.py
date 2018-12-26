@@ -2,10 +2,15 @@ import pyglet
 from pyglet.window import key
 from pyglet.window import mouse
 
-window = pyglet.window.Window()
+#window = pyglet.window.Window()
+
+window = pyglet.window.Window(fullscreen=True, screen=screens[1])
+display = window.get_display()
+screens = display.get_screens()
 
 image = pyglet.resource.image('kitten.png')
-meow = pyglet.resource.media('meow.mp3')
+#meow = pyglet.resource.media('meow.mp3')
+
 
 label = pyglet.text.Label('Hello, world',
                           font_name='Times New Roman',
@@ -33,7 +38,7 @@ def on_draw():
     window.clear()
     image.blit(0, 0)
     label.draw()
-    meow.play()
+#    meow.play()
     
 pyglet.app.run()
 
