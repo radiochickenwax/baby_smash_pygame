@@ -5,6 +5,7 @@ from pyglet.window import mouse
 window = pyglet.window.Window()
 
 image = pyglet.resource.image('kitten.png')
+meow = pyglet.resource.media('meow.mp3')
 
 label = pyglet.text.Label('Hello, world',
                           font_name='Times New Roman',
@@ -32,7 +33,8 @@ def on_draw():
     window.clear()
     image.blit(0, 0)
     label.draw()
-
+    meow.play()
+    
 pyglet.app.run()
 
 
