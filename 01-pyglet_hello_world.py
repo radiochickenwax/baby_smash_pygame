@@ -4,6 +4,8 @@ from pyglet.window import mouse
 
 window = pyglet.window.Window()
 
+image = pyglet.resource.image('kitten.png')
+
 label = pyglet.text.Label('Hello, world',
                           font_name='Times New Roman',
                           font_size=36,
@@ -28,6 +30,7 @@ def on_mouse_press(x, y, button, modifiers):
 @window.event
 def on_draw():
     window.clear()
+    image.blit(0, 0)
     label.draw()
 
 pyglet.app.run()
