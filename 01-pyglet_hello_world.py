@@ -2,12 +2,17 @@ import pyglet
 from pyglet.window import key
 from pyglet.window import mouse
 
-window = pyglet.window.Window(fullscreen=True)
+# window = pyglet.window.Window(fullscreen=True)
+# window.set_exclusive_mouse()
 
-#window = pyglet.window.Window(fullscreen=True, screen=screens[1])
-#display = window.get_display()
-#screens = display.get_screens()
+display = pyglet.window.get_platform().get_default_display()
+screens = display.get_screens()
+windows = []
+for screen in screens:
+   windows.append(pyglet.window.Window(fullscreen=True, screen=screen))
+window = windows[0]
 
+    
 image = pyglet.resource.image('kitten.png')
 #meow = pyglet.resource.media('meow.mp3')
 
